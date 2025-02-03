@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package chumchat.v1;
+
+import "chumchat/v1/api.proto";
+
+option go_package = "github.com/kizuna-org/chumchat-server/gen/chumchat/v1;mainv1";
+
+service AutonymService {
+  rpc CreateAutonym(CreateAutonymRequest) returns (CreateAutonymResponse) {}
+
+  rpc GetAutonymAPIToken(GetAutonymAPITokenRequest) returns (GetAutonymAPITokenResponse) {}
+}

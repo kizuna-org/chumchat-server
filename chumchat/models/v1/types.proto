@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package chumchat.models.v1;
+
+option go_package = "github.com/kizuna-org/chumchat-server/gen/chumchat/models/v1;modelsv1";
+
+// ULID https://github.com/ulid/spec
+message ULID {
+  string value = 1;
+}
