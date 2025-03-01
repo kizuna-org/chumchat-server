@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package chumchat.models.v1;
+
+import "chumchat/models/v1/types.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/kizuna-org/chumchat-server/gen/chumchat/models/v1;modelsv1";
+
+message AutonymData {
+  chumchat.models.v1.ULID autonym_id = 1;
+  AutonymProfile profile = 2;
+}
+
+message AutonymProfile {
+  string name = 1;
+  string profile_image_url = 2;
+  chumchat.models.v1.Gender gender = 3;
+  LiveLocation live_location = 4;
+  repeated LiveLocation live_location_history = 5;
+}
+
+// Where the Autonym lived (or is living) and the date and time it began to live.
+message LiveLocation {
+  google.protobuf.Timestamp timestamp = 1;
+  string location = 2;
+}

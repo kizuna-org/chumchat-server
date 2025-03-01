@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package chumchat.v1;
+
+import "chumchat/models/v1/autonym.proto";
+import "chumchat/models/v1/pseudonym.proto";
+import "chumchat/models/v1/types.proto";
+
+option go_package = "github.com/kizuna-org/chumchat-server/gen/chumchat/v1;mainv1";
+
+message CreateAutonymRequest {}
+
+message CreateAutonymResponse {
+  models.v1.ULID autonym_id = 1;
+  string private_key = 2;
+}
+
+message GetAutonymAPITokenRequest {
+  models.v1.ULID autonym_id = 1;
+}
+
+message GetAutonymAPITokenResponse {
+  string api_token = 1;
+}
+
+message GetAutonymProfileRequest {
+  models.v1.ULID autonym_id = 1;
+}
+
+message GetAutonymProfileResponse {
+  models.v1.AutonymProfile profile = 1;
+}
+
+message UpdateAutonymProfileRequest {
+  models.v1.ULID autonym_id = 1;
+  models.v1.AutonymProfile profile = 2;
+}
+
+message UpdateAutonymProfileResponse {
+  models.v1.AutonymProfile profile = 1;
+}
+
+message GetAutonymContactsRequest {
+  models.v1.ULID autonym_id = 1;
+}
+
+message GetAutonymContactsResponse {
+  repeated models.v1.PseudonymData pseudonyms = 1;
+}
+
+message AddNewPseudonymRequest {
+  models.v1.ULID autonym_id = 1;
+}
+
+message AddNewPseudonymResponse {
+  string name = 1;
+}
+
+message CallPseudonymRequest {
+  models.v1.ULID autonym_id = 1;
+  models.v1.ULID pseudonym_id = 2;
+}
+
+message CallPseudonymResponse {
+  models.v1.PseudonymProfile profile = 1;
+}
