@@ -6,20 +6,29 @@ import "chumchat/v1/api.proto";
 
 option go_package = "github.com/kizuna-org/chumchat-server/gen/chumchat/v1;mainv1";
 
+// Service of the action against the Autonym itself
 service AutonymService {
+  // Create a new Autonym (=sign up)
   rpc CreateAutonym(CreateAutonymRequest) returns (CreateAutonymResponse) {}
 
+  // Obtain an Autonym API Key. Processing when you log in to the application
   rpc GetAutonymAPIToken(GetAutonymAPITokenRequest) returns (GetAutonymAPITokenResponse) {}
 
+  // Get the Autonym profile
   rpc GetAutonymProfile(GetAutonymProfileRequest) returns (GetAutonymProfileResponse) {}
 
+  // Update the Autonym profile
   rpc UpdateAutonymProfile(UpdateAutonymProfileRequest) returns (UpdateAutonymProfileResponse) {}
 }
 
+// Services related to the ability to make phone calls
 service PhoneService {
+  // Retrieve a list of Pseudonyms (=phone book) that the Autonym has registered
   rpc GetAutonymContacts(GetAutonymContactsRequest) returns (GetAutonymContactsResponse) {}
 
+  // Register a Pseudonym in the Autonym's Pseudonym list (=Phonebook); the Pseudonym is created.
   rpc AddNewPseudonym(AddNewPseudonymRequest) returns (AddNewPseudonymResponse) {}
 
+  // Call a Pseudonym
   rpc CallPseudonym(CallPseudonymRequest) returns (CallPseudonymResponse) {}
 }

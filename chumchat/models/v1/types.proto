@@ -15,3 +15,10 @@ enum Gender {
   FEMALE = 2;
   OTHER = 3;
 }
+
+enum AgeGroup {
+  AGE_GROUP_UNKNOWN = 0;
+  AGE_GROUP_HIGHER = 1;
+  AGE_GROUP_LOWER = 2;
+  AGE_GROUP_ABOUT_SAME = 3;
+}

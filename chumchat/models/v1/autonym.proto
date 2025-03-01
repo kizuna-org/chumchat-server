@@ -16,10 +16,11 @@ message AutonymProfile{
   string name = 1;
   string profile_image_url = 2;
   chumchat.models.v1.Gender gender = 3;
-  string live_location = 4;
+  LiveLocation live_location = 4;
   repeated LiveLocation live_location_history = 5;
 }
 
+// Where the Autonym lived (or is living) and the date and time it began to live.
 message LiveLocation {
   google.protobuf.Timestamp timestamp = 1;
   string location = 2;
