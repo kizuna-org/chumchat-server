@@ -1,0 +1,30 @@
+name: Release Schema
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.proto'
+      - 'buf.yaml'
+      - 'buf.gen.yaml'
+
+jobs:
+  buf-gen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: bufbuild/buf-action@275c46df241e678db8e3ff3969ecb24b0b9001c5 # V1.0.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          setup_only: true
+      - name: buf generate
+        run: |
+          buf generate
+      - uses: actions/upload-artifact@v4
+        with:
+          path: out/index.html
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
