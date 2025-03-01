@@ -23,9 +23,9 @@ message GetAutonymAPITokenResponse {
   string api_token = 1;
 }
 
- message GetAutonymProfileRequest {
+message GetAutonymProfileRequest {
   models.v1.ULID autonym_id = 1;
- }
+}
 
 message GetAutonymProfileResponse {
   models.v1.AutonymProfile profile = 1;
@@ -48,9 +48,8 @@ message GetAutonymContactsResponse {
   repeated models.v1.PseudonymData pseudonyms = 1;
 }
 
-
 message AddNewPseudonymRequest {
-  models.v1.ULID autonym_id = 1; 
+  models.v1.ULID autonym_id = 1;
 }
 
 message AddNewPseudonymResponse {

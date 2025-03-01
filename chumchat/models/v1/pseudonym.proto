@@ -12,9 +12,9 @@ message PseudonymData {
   models.v1.AutonymProfile profile = 2;
 }
 
-message PseudonymProfile{
+message PseudonymProfile {
   string name = 1;
-  string profile_image_url = 2; 
+  string profile_image_url = 2;
   models.v1.Gender gender = 3;
   models.v1.AgeGroup age_group = 4;
 }
