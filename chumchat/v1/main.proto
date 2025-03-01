@@ -10,4 +10,16 @@ service AutonymService {
   rpc CreateAutonym(CreateAutonymRequest) returns (CreateAutonymResponse) {}
 
   rpc GetAutonymAPIToken(GetAutonymAPITokenRequest) returns (GetAutonymAPITokenResponse) {}
+
+  rpc GetAutonymProfile(GetAutonymProfileRequest) returns (GetAutonymProfileResponse) {}
+
+  rpc UpdateAutonymProfile(UpdateAutonymProfileRequest) returns (UpdateAutonymProfileResponse) {}
+}
+
+service PhoneService {
+  rpc GetAutonymContacts(GetAutonymContactsRequest) returns (GetAutonymContactsResponse) {}
+
+  rpc AddNewPseudonym(AddNewPseudonymRequest) returns (AddNewPseudonymResponse) {}
+
+  rpc CallPseudonym(CallPseudonymRequest) returns (CallPseudonymResponse) {}
 }

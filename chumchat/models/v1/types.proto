@@ -8,3 +8,10 @@ option go_package = "github.com/kizuna-org/chumchat-server/gen/chumchat/models/v
 message ULID {
   string value = 1;
 }
+
+enum Gender {
+  GENDER_UNKNOWN = 0;
+  MALE = 1;
+  FEMALE = 2;
+  OTHER = 3;
+}
